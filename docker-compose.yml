@@ -1,0 +1,28 @@
+version: "2.0"
+services:
+  mfe-host:
+    build:
+      context: ./host
+    ports:
+      - "3000:3000"
+    container_name: mfe-host
+    stdin_open: true
+    depends_on: 
+      - nav
+
+  mfe-nav:
+    build:
+      context: ./nav
+    ports:
+      - "3001:3001"
+    container_name: mfe-nav
+    stdin_open: true
+    depends_on: 
+      - store
+  mfe-store:
+    build:
+      context: ./store
+    ports:
+      - "3002:3002"
+    container_name: mmfe-store
+    stdin_open: true
