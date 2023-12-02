@@ -7,8 +7,8 @@ services:
       - "3000:3000"
     container_name: mfe-host
     stdin_open: true
-    depends_on: 
-      - mfe-nav
+    # depends_on: 
+    #   - mfe-nav
 
   mfe-nav:
     build:
@@ -17,8 +17,8 @@ services:
       - "3001:3001"
     container_name: mfe-nav
     stdin_open: true
-    depends_on: 
-      - mfe-store
+    # depends_on: 
+    #   - mfe-store
   mfe-store:
     build:
       context: ./store
