@@ -9,7 +9,8 @@ services:
     stdin_open: true
     # depends_on: 
     #   - mfe-nav
-
+    networks:
+      - app-network
   mfe-nav:
     build:
       context: ./nav
@@ -19,6 +20,8 @@ services:
     stdin_open: true
     # depends_on: 
     #   - mfe-store
+    networks:
+      - app-network   
   mfe-store:
     build:
       context: ./store
@@ -26,3 +29,5 @@ services:
       - "3002:3002"
     container_name: mfe-store
     stdin_open: true
+    networks:
+      - app-network  
