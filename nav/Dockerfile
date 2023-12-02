@@ -16,5 +16,6 @@ RUN npm ci
 # add app
 COPY . ./
 
+EXPOSE 3001
 # start app
 CMD ["npm", "start"]
