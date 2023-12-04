@@ -1,6 +1,13 @@
 version: "2.0"
 services:
- 
+  mfe-host:
+    build:
+      context: ./host
+    ports:
+      - "80:3000"
+    container_name: mfe-host
+    stdin_open: true
+
   mfe-nav:
     build:
       context: ./nav
@@ -8,6 +15,7 @@ services:
       - "3001:3001"
     container_name: mfe-nav
     stdin_open: true
+
   mfe-store:
     build:
       context: ./store
@@ -15,10 +23,3 @@ services:
       - "3002:3002"
     container_name: mfe-store
     stdin_open: true
-  mfe-host:
-    build:
-      context: ./host
-    ports:
-      - "80:3000"
-    container_name: mfe-host
-    stdin_open: true   
