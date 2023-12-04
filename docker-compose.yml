@@ -4,7 +4,7 @@ services:
     build:
       context: ./host
     ports:
-      - "80:3000"
+      - "3000:3000"
     container_name: mfe-host
     stdin_open: true
 
